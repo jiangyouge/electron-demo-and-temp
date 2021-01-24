@@ -72,12 +72,12 @@
     width: 420px;
   }
 
-  main {
+  /* main {
     display: flex;
     justify-content: space-between;
   }
 
-  main > div { flex-basis: 50%; }
+  main > div { flex-basis: 50%; } */
 
   .left-side {
     display: flex;

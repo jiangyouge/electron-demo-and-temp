@@ -31,7 +31,7 @@
       <button type="button" id="button-notifications" data-section="notifications" class="nav-button" @click.stop="changeDoc('Notifications')">使用基本或附带图像的 <em>通知</em></button>
       <button type="button" id="button-dialogs" data-section="dialogs" class="nav-button" @click.stop="changeDoc('Dialogs')">使用系统 <em>对话框</em></button>
       <button type="button" id="button-tray" data-section="tray" class="nav-button" @click.stop="changeDoc('Tray')">将应用程序放入 <em>托盘</em></button>
-      <button type="button" id="button-drag" data-section="drag" class="nav-button" @click.stop="changeDoc('Tray')"><em>拖放</em> 文件</button>
+      <button type="button" id="button-drag" data-section="drag" class="nav-button" @click.stop="changeDoc('Drag')"><em>拖放</em> 文件</button>
     </div>
 
     <div class="nav-item u-category-communication">
@@ -39,7 +39,7 @@
         <svg class="nav-icon"><use xlink:href="@/assets/img/icons.svg#icon-communication"></use></svg>
         通信
       </h5>
-      <button type="button" id="button-ipc" data-section="ipc" class="nav-button" @click.stop="changeDoc('Tray')">在 <em>两个进程</em> 之间进行通信</button>
+      <button type="button" id="button-ipc" data-section="ipc" class="nav-button" @click.stop="changeDoc('Ipc')">在 <em>两个进程</em> 之间进行通信</button>
     </div>
 
     <div class="nav-item u-category-system">
@@ -47,9 +47,9 @@
         <svg class="nav-icon"><use xlink:href="@/assets/img/icons.svg#icon-system"></use></svg>
         系统
       </h5>
-      <button type="button" id="button-app-sys-information" data-section="app-sys-information" class="nav-button" @click.stop="changeDoc('Tray')" >获取应用或用户 <em>系统信息</em></button>
-      <button type="button" id="button-clipboard" data-section="clipboard" class="nav-button" @click.stop="changeDoc('Tray')">从 <em>剪贴板</em> 复制和粘贴</button>
-      <button type="button" id="button-protocol" data-section="protocol" class="nav-button" @click.stop="changeDoc('Tray')">使用 <em>协议处理器</em> 启动应用程序</button>
+      <button type="button" id="button-app-sys-information" data-section="app-sys-information" class="nav-button" @click.stop="changeDoc('AppSysInformation')" >获取应用或用户 <em>系统信息</em></button>
+      <button type="button" id="button-clipboard" data-section="clipboard" class="nav-button" @click.stop="changeDoc('Clipboard')">从 <em>剪贴板</em> 复制和粘贴</button>
+      <button type="button" id="button-protocol" data-section="protocol" class="nav-button" @click.stop="changeDoc('ProtocolHandler')">使用 <em>协议处理器</em> 启动应用程序</button>
     </div>
 
     <div class="nav-item u-category-media">
@@ -57,12 +57,12 @@
         <svg class="nav-icon"><use xlink:href="@/assets/img/icons.svg#icon-media"></use></svg>
         媒体
       </h5>
-      <button type="button" id="button-pdf" data-section="pdf" class="nav-button" @click.stop="changeDoc('Tray')"><em>打印</em> 到 PDF</button>
-      <button type="button" id="button-desktop-capturer" data-section="desktop-capturer" class="nav-button" @click.stop="changeDoc('Tray')">创建 <em>屏幕截图</em></button>
+      <button type="button" id="button-pdf" data-section="pdf" class="nav-button" @click.stop="changeDoc('Pdf')"><em>打印</em> 到 PDF</button>
+      <button type="button" id="button-desktop-capturer" data-section="desktop-capturer" class="nav-button" @click.stop="changeDoc('DesktopCapturer')">创建 <em>屏幕截图</em></button>
     </div>
 
     <footer class="nav-footer">
-      <button type="button" id="button-about" data-modal="about" class="nav-footer-button" @click.stop="changeDoc('Tray')">关于</button>
+      <button type="button" id="button-about" data-modal="about" class="nav-footer-button">关于</button>
       <a class="nav-footer-logo" href="https://github.com" aria-label="Homepage">
         <svg class="nav-footer-icon"><use xlink:href="@/assets/img/icons.svg#icon-love"></use></svg>
       </a>

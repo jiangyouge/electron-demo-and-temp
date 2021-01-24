@@ -15,8 +15,8 @@
     </header>
 
     <div class="demo">
-      <div class="demo-wrapper">
-        <button id="application-menu-demo-toggle" class="js-container-target demo-toggle-button">创建应用程序菜单
+      <div class="demo-wrapper" :class="openDocFlag ? 'is-open' : ''">
+        <button id="application-menu-demo-toggle" class="js-container-target demo-toggle-button" @click.stop="openDocSection">创建应用程序菜单
           <div class="demo-meta u-avoid-clicks">支持: Win, macOS, Linux <span class="demo-meta-divider">|</span> 进程: Main</div>
         </button>
         <div class="demo-box">
@@ -42,8 +42,8 @@
     </div>
 
     <div class="demo">
-      <div class="demo-wrapper">
-        <button id="context-menu-demo-toggle" class="js-container-target demo-toggle-button">创建上下文菜单
+      <div class="demo-wrapper" :class="openDocFlag ? 'is-open' : ''">
+        <button id="context-menu-demo-toggle" class="js-container-target demo-toggle-button" @click.stop="openDocSection">创建上下文菜单
           <div class="demo-meta u-avoid-clicks">支持: Win, macOS, Linux <span class="demo-meta-divider">|</span> 进程: Main</div>
         </button>
         <div class="demo-box">
@@ -77,7 +77,14 @@ export default {
   name: 'Menus',
   data () {
     return {
-
+      openDocFlag: false
+    }
+  },
+  methods: {
+    openDocSection () {
+      // console.log('in - openDocSection =====')
+      // this.$emit('openDocSection')
+      this.openDocFlag = !this.openDocFlag
     }
   },
   mounted () {

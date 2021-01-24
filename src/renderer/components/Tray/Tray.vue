@@ -14,8 +14,8 @@
     </header>
 
     <div class="demo">
-      <div class="demo-wrapper">
-        <button id="tray-demo-toggle" class="js-container-target demo-toggle-button">托盘
+      <div class="demo-wrapper" :class="openDocFlag ? 'is-open' : ''">
+        <button id="tray-demo-toggle" class="js-container-target demo-toggle-button" @click.stop="openDocSection">托盘
           <div class="demo-meta u-avoid-clicks">支持: Win, macOS, Linux | 进程: Main</div>
         </button>
         <div class="demo-box">
@@ -55,7 +55,14 @@ export default {
   name: 'Tray',
   data () {
     return {
-
+      openDocFlag: false
+    }
+  },
+  methods: {
+    openDocSection () {
+      // console.log('in - openDocSection =====')
+      // this.$emit('openDocSection')
+      this.openDocFlag = !this.openDocFlag
     }
   },
   mounted () {

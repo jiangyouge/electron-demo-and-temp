@@ -14,8 +14,8 @@
     </header>
 
     <div class="demo">
-      <div class="demo-wrapper">
-        <button id="open-file-manager-demo-toggle" class="js-container-target demo-toggle-button">在文件管理器中打开路径
+      <div class="demo-wrapper" :class="openDocFlag ? 'is-open' : ''">
+        <button id="open-file-manager-demo-toggle" class="js-container-target demo-toggle-button" @click.stop="openDocSection">在文件管理器中打开路径
           <div class="demo-meta u-avoid-clicks">支持: Win, macOS, Linux <span class="demo-meta-divider">|</span> 进程: Both</div>
         </button>
         <div class="demo-box">
@@ -31,8 +31,8 @@
     </div>
 
     <div class="demo">
-      <div class="demo-wrapper">
-        <button id="open-ex-links-demo-toggle" class="js-container-target demo-toggle-button">打开外部链接
+      <div class="demo-wrapper" :class="openDocFlag ? 'is-open' : ''">
+        <button id="open-ex-links-demo-toggle" class="js-container-target demo-toggle-button" @click.stop="openDocSection">打开外部链接
           <div class="demo-meta u-avoid-clicks">支持: Win, macOS, Linux <span class="demo-meta-divider">|</span> 进程: Both</div>
         </button>
         <div class="demo-box">
@@ -74,7 +74,14 @@ export default {
   name: 'ExLinksFileManager',
   data () {
     return {
-
+      openDocFlag: false
+    }
+  },
+  methods: {
+    openDocSection () {
+      // console.log('in - openDocSection =====')
+      // this.$emit('openDocSection')
+      this.openDocFlag = !this.openDocFlag
     }
   },
   mounted () {

@@ -6,6 +6,7 @@
       <main>
         <components
           :is="showMainDocName"
+          @openDocSection="openDocSection"
         ></components>
       </main>
     </div>
@@ -23,9 +24,17 @@ import {
   ExLinksFileManager,
   Notifications,
   Dialogs,
-  Tray
+  Tray,
+  Drag,
+  Ipc,
+  AppSysInformation,
+  Clipboard,
+  ProtocolHandler,
+  Pdf,
+  DesktopCapturer
 } from '@/components'
 
+// const settings = require('electron-settings')
 export default {
   name: 'mainPage',
   data () {
@@ -44,16 +53,54 @@ export default {
     ExLinksFileManager,
     Notifications,
     Dialogs,
-    Tray
+    Tray,
+    Drag,
+    Ipc,
+    AppSysInformation,
+    Clipboard,
+    ProtocolHandler,
+    Pdf,
+    DesktopCapturer
   },
   methods: {
     changeDoc (type = 'Windows') {
       console.log('out - type =====', type)
       this.showMainDocName = type
+    },
+    openDocSection () {
+      console.log('out - openDocSection =====')
     }
   },
   mounted () {
     console.log('NavLeft == ', NavLeft)
+    // const demoBtns = document.querySelectorAll('.js-container-target')
+    // console.log('demoBtns == ', demoBtns)
+    // Listen for demo button clicks
+    // Array.prototype.forEach.call(demoBtns, (btn) => {
+    //   console.log('btn == ', btn)
+    //   btn.addEventListener('click', (event) => {
+    //     console.log('event == ', event)
+    //     const parent = event.target.parentElement
+
+    //     // Toggles the "is-open" class on the demo's parent element.
+    //     parent.classList.toggle('is-open')
+
+    //     // Saves the active demo if it is open, or clears it if the demo was user
+    //     // collapsed by the user
+    //     if (parent.classList.contains('is-open')) {
+    //       settings.set('activeDemoButtonId', event.target.getAttribute('id'))
+    //     } else {
+    //       settings.delete('activeDemoButtonId')
+    //     }
+    //   })
+    // })
+
+    // // Default to the demo that was active the last time the app was open
+    // const buttonId = settings.get('activeDemoButtonId')
+    // console.log('buttonId = ', buttonId)
+    // if (buttonId) {
+    //   document.getElementById(buttonId).click()
+    // }
   }
 }
 </script>
@@ -69,6 +116,7 @@ export default {
         -webkit-app-region: drag;
 
       main {
+        flex: auto;
         height: 100%;
       }
         

@@ -15,8 +15,8 @@
     </header>
 
     <div class="demo">
-      <div class="demo-wrapper">
-        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">创建一个新窗体
+      <div class="demo-wrapper" :class="openDocFlag ? 'is-open' : ''">
+        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button" @click.stop="openDocSection">创建一个新窗体
           <div class="demo-meta u-avoid-clicks">支持: Win, macOS, Linux <span class="demo-meta-divider">|</span> 进程: Main</div>
         </button>
         <div class="demo-box">
@@ -43,8 +43,8 @@
     </div>
 
     <div class="demo">
-      <div class="demo-wrapper">
-        <button id="manage-window-demo-toggle" class="js-container-target demo-toggle-button">管理窗体状态
+      <div class="demo-wrapper" :class="openDocFlag ? 'is-open' : ''">
+        <button id="manage-window-demo-toggle" class="js-container-target demo-toggle-button" @click.stop="openDocSection">管理窗体状态
           <div class="demo-meta u-avoid-clicks">支持: Win, macOS, Linux <span class="demo-meta-divider">|</span> 进程: Main</div>
         </button>
         <div class="demo-box">
@@ -61,8 +61,8 @@
     </div>
 
     <div class="demo">
-      <div class="demo-wrapper">
-        <button id="using-window-events-demo-toggle" class="js-container-target demo-toggle-button">窗体事件: 获取和失去焦点
+      <div class="demo-wrapper" :class="openDocFlag ? 'is-open' : ''">
+        <button id="using-window-events-demo-toggle" class="js-container-target demo-toggle-button" @click.stop="openDocSection">窗体事件: 获取和失去焦点
           <div class="demo-meta u-avoid-clicks">支持: Win, macOS, Linux <span class="demo-meta-divider">|</span> 进程: Main</div>
         </button>
         <div class="demo-box">
@@ -78,8 +78,8 @@
     </div>
 
     <div class="demo">
-      <div class="demo-wrapper">
-        <button class="js-container-target demo-toggle-button">创建一个无框窗体
+      <div class="demo-wrapper" :class="openDocFlag ? 'is-open' : ''">
+        <button class="js-container-target demo-toggle-button" @click.stop="openDocSection">创建一个无框窗体
           <div class="demo-meta u-avoid-clicks">支持: Win, macOS, Linux <span class="demo-meta-divider">|</span> 进程: Main</div>
         </button>
         <div class="demo-box">
@@ -125,7 +125,14 @@ export default {
   name: 'Windows',
   data () {
     return {
-
+      openDocFlag: false
+    }
+  },
+  methods: {
+    openDocSection () {
+      // console.log('in - openDocSection =====')
+      // this.$emit('openDocSection')
+      this.openDocFlag = !this.openDocFlag
     }
   },
   mounted () {

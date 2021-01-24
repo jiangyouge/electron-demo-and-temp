@@ -18,6 +18,13 @@ import ExLinksFileManager from '@/components/ExLinksFileManager/ExLinksFileManag
 import Notifications from '@/components/Notifications/Notifications.vue'
 import Dialogs from '@/components/Dialogs/Dialogs.vue'
 import Tray from '@/components/Tray/Tray.vue'
+import Drag from '@/components/Drag/Drag.vue'
+import Ipc from '@/components/Ipc/Ipc.vue'
+import AppSysInformation from '@/components/AppSysInformation/AppSysInformation.vue'
+import Clipboard from '@/components/Clipboard/Clipboard.vue'
+import ProtocolHandler from '@/components/ProtocolHandler/ProtocolHandler.vue'
+import Pdf from '@/components/Pdf/Pdf.vue'
+import DesktopCapturer from '@/components/DesktopCapturer/DesktopCapturer.vue'
 
 // export {musicProgress, musicName, musicInfo, musicControl, musicAudio, musicCanvas}
 export {
@@ -31,5 +38,12 @@ export {
   ExLinksFileManager,
   Notifications,
   Dialogs,
-  Tray
+  Tray,
+  Drag,
+  Ipc,
+  AppSysInformation,
+  Clipboard,
+  ProtocolHandler,
+  Pdf,
+  DesktopCapturer
 }

@@ -24,7 +24,7 @@ export default {
         color: rgba(255, 255, 255, 0.8);
         font-size: 32px;
         letter-spacing: -1px;
-        z-index: -1;
+        // z-index: -1;
         pointer-events: none;
         user-select: none;
     }

@@ -104,6 +104,6 @@ export default {
         top: 0px;
         pointer-events: none;
         user-select: none;
-        z-index: -1;
+        // z-index: -1;
     }
 </style>

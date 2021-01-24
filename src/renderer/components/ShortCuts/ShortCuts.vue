@@ -27,8 +27,8 @@
     </header>
 
     <div class="demo">
-      <div class="demo-wrapper">
-        <button id="shortcuts-demo-toggle" class="js-container-target demo-toggle-button">注册全局键盘快捷键
+      <div class="demo-wrapper" :class="openDocFlag ? 'is-open' : ''">
+        <button id="shortcuts-demo-toggle" class="js-container-target demo-toggle-button" @click.stop="openDocSection">注册全局键盘快捷键
           <div class="demo-meta u-avoid-clicks">支持: Win, macOS, Linux <span class="demo-meta-divider">|</span> 进程: Main</div>
         </button>
         <div class="demo-box">
@@ -73,7 +73,14 @@ export default {
   name: 'ShortCuts',
   data () {
     return {
-
+      openDocFlag: false
+    }
+  },
+  methods: {
+    openDocSection () {
+      // console.log('in - openDocSection =====')
+      // this.$emit('openDocSection')
+      this.openDocFlag = !this.openDocFlag
     }
   },
   mounted () {

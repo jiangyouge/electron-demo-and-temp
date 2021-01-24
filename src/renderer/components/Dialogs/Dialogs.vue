@@ -15,8 +15,8 @@
     </header>
 
     <div class="demo">
-      <div class="demo-wrapper">
-        <button id="open-file-demo-toggle" class="js-container-target demo-toggle-button">打开文件或目录
+      <div class="demo-wrapper" :class="openDocFlag ? 'is-open' : ''">
+        <button id="open-file-demo-toggle" class="js-container-target demo-toggle-button" @click.stop="openDocSection">打开文件或目录
           <div class="demo-meta u-avoid-clicks">支持: Win, macOS, Linux <span class="demo-meta-divider">|</span> 进程: Main</div>
         </button>
         <div class="demo-box">
@@ -49,8 +49,8 @@ ipc.on('open-file-dialog-sheet', function (event) {
     </div>
 
     <div class="demo">
-      <div class="demo-wrapper">
-        <button id="error-dialog-demo-toggle" class="js-container-target demo-toggle-button">错误对话框
+      <div class="demo-wrapper" :class="openDocFlag ? 'is-open' : ''">
+        <button id="error-dialog-demo-toggle" class="js-container-target demo-toggle-button" @click.stop="openDocSection">错误对话框
           <div class="demo-meta u-avoid-clicks">支持: Win, macOS, Linux <span class="demo-meta-divider">|</span> 进程: Main</div>
         </button>
         <div class="demo-box">
@@ -69,8 +69,8 @@ ipc.on('open-file-dialog-sheet', function (event) {
     </div>
 
     <div class="demo">
-      <div class="demo-wrapper">
-        <button id="information-dialog-demo-toggle" class="js-container-target demo-toggle-button">信息对话框
+      <div class="demo-wrapper" :class="openDocFlag ? 'is-open' : ''">
+        <button id="information-dialog-demo-toggle" class="js-container-target demo-toggle-button" @click.stop="openDocSection">信息对话框
           <div class="demo-meta u-avoid-clicks">支持: Win, macOS, Linux <span class="demo-meta-divider">|</span> 进程: Main</div>
         </button>
         <div class="demo-box">
@@ -92,8 +92,8 @@ ipc.on('open-file-dialog-sheet', function (event) {
     </div>
 
     <div class="demo">
-      <div class="demo-wrapper">
-        <button id="save-dialog-demo-toggle" class="js-container-target demo-toggle-button">保存对话框
+      <div class="demo-wrapper" :class="openDocFlag ? 'is-open' : ''">
+        <button id="save-dialog-demo-toggle" class="js-container-target demo-toggle-button" @click.stop="openDocSection">保存对话框
           <div class="demo-meta u-avoid-clicks">支持: Win, macOS, Linux <span class="demo-meta-divider">|</span> 进程: Main</div>
         </button>
         <div class="demo-box">
@@ -128,7 +128,14 @@ export default {
   name: 'Dialogs',
   data () {
     return {
-
+      openDocFlag: false
+    }
+  },
+  methods: {
+    openDocSection () {
+      // console.log('in - openDocSection =====')
+      // this.$emit('openDocSection')
+      this.openDocFlag = !this.openDocFlag
     }
   },
   mounted () {

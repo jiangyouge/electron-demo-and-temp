@@ -22,7 +22,7 @@ export default {
         color: rgba(255, 192, 203, 0.8);
         font-size: 22px;
         letter-spacing: 1px;
-        z-index: -1;
+        // z-index: -1;
         pointer-events: none;
         user-select: none;
     }

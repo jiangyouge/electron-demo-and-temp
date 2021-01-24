@@ -103,7 +103,7 @@ export default {
             background: rgba(255, 255, 255, 0.8);
             width: 24px;
             height: 24px;
-            z-index: -1;
+            // z-index: -1;
             animation: scaleBtn 0.6s ease-in infinite alternate;
             animation-play-state: paused;
 

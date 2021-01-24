@@ -13,7 +13,7 @@
   color: var(--color-accent);
 
   /* Hide */
-  pointer-events: none;
+  /*pointer-events: none;*/ /*让元素无法点击。无法被选中*/
   /* visibility: hidden; */
   /* opacity: 0; */
   /* transform: translateX(-20px); */
